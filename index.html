@@ -7,155 +7,542 @@
 <title>Satyam Tiwari | Developer Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{
- background:#080d18;color:#f8fafc;
- font-family:Arial,sans-serif;line-height:1.7
-}
-a{text-decoration:none;color:inherit}
-header{
- position:sticky;top:0;z-index:10;
- background:#080d18ee;backdrop-filter:blur(12px);
- border-bottom:1px solid #1e293b;padding:15px 7%
-}
-nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:23px;font-weight:bold;color:#38bdf8}
-nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
-nav a:hover{color:#38bdf8}
-section{padding:75px 8%;scroll-margin-top:65px}
-.hero{
- min-height:80vh;display:flex;align-items:center;
- justify-content:center;gap:45px;flex-wrap:wrap;text-align:left
-}
-.hero-content{max-width:570px}
-.hero h1{font-size:clamp(38px,7vw,60px);color:#38bdf8;line-height:1.2}
-.hero h2{font-size:27px;margin:15px 0}
-.hero p{color:#cbd5e1;font-size:18px}
-.profile{
- width:220px;height:220px;border-radius:50%;
- object-fit:cover;border:5px solid #38bdf8;
- box-shadow:0 0 35px #0ea5e955
-}
-.btn{
- display:inline-block;margin-top:22px;padding:12px 22px;
- background:#0284c7;border-radius:9px;font-weight:bold
-}
-.btn:hover{background:#0369a1}
-.section-title{text-align:center;font-size:32px;margin-bottom:30px;color:#38bdf8}
-.card{
- background:#111a2b;border:1px solid #1e293b;
- padding:28px;border-radius:17px;margin:18px auto;
- max-width:850px
-}
-.card h3{font-size:22px;margin-bottom:12px}
-.card p,.card li{color:#cbd5e1}
-.skills{
- display:flex;justify-content:center;gap:13px;flex-wrap:wrap
-}
-.skill{
- background:#17263d;border:1px solid #2563a5;
- padding:12px 20px;border-radius:10px;color:#7dd3fc
-}
-.project-link{color:#38bdf8;font-weight:bold}
-.center{text-align:center}
-footer{
- text-align:center;padding:25px;
- border-top:1px solid #1e293b;color:#94a3b8
-}
-@media(max-width:600px){
- header{padding:13px 5%}
- nav{justify-content:center}
- nav ul{justify-content:center;gap:13px;font-size:14px}
- section{padding:55px 6%}
- .hero{text-align:center;min-height:auto;padding-top:60px}
- .profile{width:170px;height:170px}
- .hero h2{font-size:23px}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* PROJECT CARDS STYLE */
-.project-intro {
-  color: #94a3b8;
-  margin-bottom: 30px;
+:root {
+  --bg: #070b16;
+  --panel: #101a2d;
+  --blue: #38bdf8;
+  --cyan: #67e8f9;
+  --text: #f8fafc;
+  --muted: #a9b8ce;
+  --border: rgba(125,211,252,.17);
 }
+
+body {
+  background:
+    radial-gradient(ellipse at 15% 5%, #12345b55, transparent 35%),
+    radial-gradient(ellipse at 90% 45%, #123c5550, transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7,11,22,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 6%;
+}
+
+nav {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--cyan);
+}
+
+section {
+  padding: 85px 7%;
+  scroll-margin-top: 75px;
+}
+
+.hero {
+  min-height: 85vh;
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 650px;
+  flex: 1 1 300px;
+}
+
+.hero-content > p:first-child {
+  color: var(--cyan) !important;
+  font-size: 13px !important;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.15;
+  background: linear-gradient(90deg,#38bdf8,#a5f3fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero h2 {
+  font-size: clamp(23px,4vw,34px);
+  margin: 15px 0;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.profile {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--blue);
+  padding: 6px;
+  box-shadow: 0 0 45px #0ea5e955;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 13px 24px;
+  background: linear-gradient(100deg,#0284c7,#2563eb);
+  border: 1px solid #7dd3fc66;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px #0284c755;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(28px,4vw,38px);
+  margin-bottom: 35px;
+  color: var(--cyan);
+}
+
+.card {
+  background: linear-gradient(145deg,#132039dd,#0b1425ee);
+  border: 1px solid var(--border);
+  padding: 32px;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 15px 45px #0004;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.card p, .card li {
+  color: var(--muted);
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background: linear-gradient(145deg,#142c49,#101b30);
+  border: 1px solid #38bdf855;
+  padding: 12px 22px;
+  border-radius: 12px;
+  color: #a5f3fc;
+  transition: .3s;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+}
+
+.center {
+  text-align: center;
+}
+
+.project-intro {
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-  max-width: 1100px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
 }
+
 .project-card {
-  background: linear-gradient(145deg, #111d32, #0c1424);
-  border: 1px solid #263b59;
-  border-radius: 18px;
-  padding: 26px;
-  transition: transform .25s, border-color .25s;
+  min-width: 0;
+  background: linear-gradient(150deg,#15243c,#0b1425);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 25px;
+  overflow-wrap: anywhere;
+  transition: transform .3s,border-color .3s,box-shadow .3s;
 }
+
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
   border-color: #38bdf8;
+  box-shadow: 0 15px 35px #0284c722;
 }
+
 .project-card h3 {
   font-size: 25px;
-  color: #f8fafc;
-  margin: 15px 0 4px;
+  color: var(--text);
+  margin: 15px 0 5px;
 }
+
 .project-card h4 {
-  color: #38bdf8;
+  color: var(--cyan);
   margin: 20px 0 8px;
 }
+
 .project-card p, .project-card li {
-  color: #bdc9da;
-  font-size: 15px;
-  line-height: 1.7;
+  color: #b8c7da;
+  font-size: 14px;
+  line-height: 1.8;
 }
+
 .project-card ul {
   padding-left: 20px;
 }
+
 .project-tag {
-  color: #38bdf8;
+  color: var(--cyan);
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 1px;
 }
+
 .project-subtitle {
   color: #7dd3fc !important;
   font-weight: bold;
+  margin-bottom: 14px;
 }
+
 .project-tech {
-  background: #17263d;
-  color: #7dd3fc;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 13px;
+  background: #1b3450;
+  color: #a5f3fc;
+  padding: 11px;
+  border-radius: 9px;
+  font-size: 12px;
   margin-top: 18px;
 }
+
 .project-status {
   display: block;
   margin-top: 15px;
   color: #86efac;
   font-size: 13px;
 }
+
 .project-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
 }
+
 .project-buttons a, .coming-soon {
   display: inline-block;
   padding: 10px 13px;
-  border-radius: 8px;
-  font-size: 13px;
-  text-decoration: none;
+  border-radius: 9px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
 }
+
 .project-buttons a {
-  background: #0284c7;
+  background: #087db5;
   color: white;
 }
+
 .coming-soon {
   background: #263449;
   color: #cbd5e1;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid var(--border);
+  color: #94a3b8;
+  background: #080e1b;
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 13px 4%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 12px 17px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 65px 5%;
+    text-align: center;
+    flex-direction: column-reverse;
+    gap: 28px;
+  }
+
+  .hero-content {
+    flex: auto;
+    width: 100%;
+  }
+
+  .profile {
+    width: 175px;
+    height: 175px;
+  }
+
+  .card {
+    padding: 23px;
+  }
+
+  .project-grid {
+    grid-template-columns: minmax(0,1fr);
+    width: 100%;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 22px;
+  }
+
+  .section-title {
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .project-card, .skill, .btn {
+    animation: appear .6s ease both;
+  }
+
+  @keyframes appear {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+}
+
+
+/* Additional professional portfolio sections */
+.eyebrow {
+  color: var(--cyan);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  max-width: 620px;
+  margin: 15px 0;
+  color: #b8c7da;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.outline-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid var(--cyan);
+  border-radius: 10px;
+  color: var(--cyan);
+  transition: .3s;
+}
+
+.outline-btn:hover {
+  background: #38bdf822;
+  transform: translateY(-3px);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.info-card {
+  min-width: 0;
+  padding: 27px;
+  border-radius: 19px;
+  background: linear-gradient(145deg,#15243c,#0b1425);
+  border: 1px solid var(--border);
+  transition: .3s;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 30px #0284c722;
+}
+
+.info-number {
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.info-card h3 {
+  color: var(--text);
+  margin: 15px 0 10px;
+  font-size: 21px;
+}
+
+.info-card p {
+  color: #b8c7da;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.resume-card {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 20px;
+  background: linear-gradient(145deg,#15243c,#0b1425);
+  border: 1px solid var(--border);
+}
+
+.resume-icon {
+  width: 65px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border: 1px solid var(--cyan);
+  border-radius: 12px;
+  color: var(--cyan);
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.resume-card h3 {
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.resume-card p {
+  color: #b8c7da;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 900px) {
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .info-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .resume-card {
+    padding: 25px 18px;
+  }
+}
+
+
+.resume-preview {
+  width: 100%;
+  height: 650px;
+  margin: 15px 0 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
 }
 \n</style>
 </head>
@@ -167,10 +554,13 @@ footer{
 <div class="logo">Satyam.</div>
 <ul>
 <li><a href="#home">Home</a></li>
+<li><a href="#highlights">Highlights</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#interests">Interests</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#resume">Resume</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -182,9 +572,38 @@ footer{
 <h1>Satyam Tiwari</h1>
 <h2>Aspiring Web Developer</h2>
 <p>B.Tech Computer Science and Engineering Student | 2nd Year</p>
-<a class="btn" href="#about">Explore My Portfolio</a>
+<p class="hero-description">
+Interested in Web Development, Software Engineering and building
+practical technology solutions for real-world problems.
+</p>
+<div class="hero-actions">
+<a class="btn" href="#projects">Explore My Work ↗</a>
+<a class="outline-btn" href="https://github.com/Satyam0001-1" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
 </div>
 <img class="profile" src="profile.jpg" alt="Satyam Tiwari Profile Photo">
+</section>
+
+<section id="highlights">
+<p class="eyebrow">PROFILE OVERVIEW</p>
+<h2 class="section-title">Profile Highlights</h2>
+<div class="info-grid">
+<div class="info-card">
+<span class="info-number">01</span>
+<h3>Programming</h3>
+<p>Learning HTML, CSS, JavaScript and core programming concepts.</p>
+</div>
+<div class="info-card">
+<span class="info-number">02</span>
+<h3>Areas of Interest</h3>
+<p>Web Development, Software Engineering and Problem Solving.</p>
+</div>
+<div class="info-card">
+<span class="info-number">03</span>
+<h3>Current Focus</h3>
+<p>Building practical projects and improving development skills.</p>
+</div>
+</div>
 </section>
 
 <section id="about">
@@ -230,6 +649,31 @@ Currently learning and improving my development skills.
 </p>
 </section>
 
+
+<section id="interests">
+<p class="eyebrow">WHAT I WANT TO EXPLORE</p>
+<h2 class="section-title">Areas of Interest</h2>
+<p class="center project-intro">
+Technology areas I am exploring through learning and practical projects.
+</p>
+<div class="info-grid">
+<div class="info-card">
+<span class="info-number">01</span>
+<h3>Web Development</h3>
+<p>Creating responsive and user-friendly websites and web applications.</p>
+</div>
+<div class="info-card">
+<span class="info-number">02</span>
+<h3>Software Engineering</h3>
+<p>Understanding software design and developing useful digital solutions.</p>
+</div>
+<div class="info-card">
+<span class="info-number">03</span>
+<h3>Problem Solving</h3>
+<p>Using logical thinking to understand and solve practical problems.</p>
+</div>
+</div>
+</section>
 
 <section id="projects">
 <h2 class="section-title">My Projects</h2>
@@ -319,6 +763,30 @@ flatmates or tenants, and administrators.
 </div>
 </section>
 
+
+<section id="resume">
+<p class="eyebrow">MY RESUME</p>
+<h2 class="section-title">My Resume</h2>
+<div class="resume-card center">
+<h3>Satyam Tiwari - Resume</h3>
+<p>View my education, technical skills and personal projects.</p>
+
+<iframe
+  src="resume.pdf"
+  title="Satyam Tiwari Resume"
+  class="resume-preview">
+</iframe>
+
+<div class="hero-actions">
+<a class="btn" href="resume.pdf" target="_blank" rel="noopener">
+View Resume ↗
+</a>
+<a class="btn" href="resume.pdf" download="Satyam_Tiwari_Resume.pdf">
+Download Resume ↓
+</a>
+</div>
+</div>
+</section>
 
 <section id="contact">
 <h2 class="section-title">Let's Connect</h2>
