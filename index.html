@@ -1,30 +1,341 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Satyam Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Satyam Tiwari - B.Tech CSE Student and Aspiring Web Developer. Explore my skills and projects.">
+<title>Satyam Tiwari | Developer Portfolio</title>
+
 <style>
-body{background:#080d18;color:white;font-family:Arial;text-align:center;padding:30px}
-h1{color:#38bdf8;margin-top:70px}
-.card{background:#111a2b;padding:25px;margin:20px auto;border-radius:15px;max-width:450px}
-</style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+ background:#080d18;color:#f8fafc;
+ font-family:Arial,sans-serif;line-height:1.7
+}
+a{text-decoration:none;color:inherit}
+header{
+ position:sticky;top:0;z-index:10;
+ background:#080d18ee;backdrop-filter:blur(12px);
+ border-bottom:1px solid #1e293b;padding:15px 7%
+}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:23px;font-weight:bold;color:#38bdf8}
+nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+nav a:hover{color:#38bdf8}
+section{padding:75px 8%;scroll-margin-top:65px}
+.hero{
+ min-height:80vh;display:flex;align-items:center;
+ justify-content:center;gap:45px;flex-wrap:wrap;text-align:left
+}
+.hero-content{max-width:570px}
+.hero h1{font-size:clamp(38px,7vw,60px);color:#38bdf8;line-height:1.2}
+.hero h2{font-size:27px;margin:15px 0}
+.hero p{color:#cbd5e1;font-size:18px}
+.profile{
+ width:220px;height:220px;border-radius:50%;
+ object-fit:cover;border:5px solid #38bdf8;
+ box-shadow:0 0 35px #0ea5e955
+}
+.btn{
+ display:inline-block;margin-top:22px;padding:12px 22px;
+ background:#0284c7;border-radius:9px;font-weight:bold
+}
+.btn:hover{background:#0369a1}
+.section-title{text-align:center;font-size:32px;margin-bottom:30px;color:#38bdf8}
+.card{
+ background:#111a2b;border:1px solid #1e293b;
+ padding:28px;border-radius:17px;margin:18px auto;
+ max-width:850px
+}
+.card h3{font-size:22px;margin-bottom:12px}
+.card p,.card li{color:#cbd5e1}
+.skills{
+ display:flex;justify-content:center;gap:13px;flex-wrap:wrap
+}
+.skill{
+ background:#17263d;border:1px solid #2563a5;
+ padding:12px 20px;border-radius:10px;color:#7dd3fc
+}
+.project-link{color:#38bdf8;font-weight:bold}
+.center{text-align:center}
+footer{
+ text-align:center;padding:25px;
+ border-top:1px solid #1e293b;color:#94a3b8
+}
+@media(max-width:600px){
+ header{padding:13px 5%}
+ nav{justify-content:center}
+ nav ul{justify-content:center;gap:13px;font-size:14px}
+ section{padding:55px 6%}
+ .hero{text-align:center;min-height:auto;padding-top:60px}
+ .profile{width:170px;height:170px}
+ .hero h2{font-size:23px}
+}
+
+/* PROJECT CARDS STYLE */
+.project-intro {
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: auto;
+}
+.project-card {
+  background: linear-gradient(145deg, #111d32, #0c1424);
+  border: 1px solid #263b59;
+  border-radius: 18px;
+  padding: 26px;
+  transition: transform .25s, border-color .25s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+}
+.project-card h3 {
+  font-size: 25px;
+  color: #f8fafc;
+  margin: 15px 0 4px;
+}
+.project-card h4 {
+  color: #38bdf8;
+  margin: 20px 0 8px;
+}
+.project-card p, .project-card li {
+  color: #bdc9da;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.project-card ul {
+  padding-left: 20px;
+}
+.project-tag {
+  color: #38bdf8;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.project-subtitle {
+  color: #7dd3fc !important;
+  font-weight: bold;
+}
+.project-tech {
+  background: #17263d;
+  color: #7dd3fc;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 18px;
+}
+.project-status {
+  display: block;
+  margin-top: 15px;
+  color: #86efac;
+  font-size: 13px;
+}
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.project-buttons a, .coming-soon {
+  display: inline-block;
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+}
+.project-buttons a {
+  background: #0284c7;
+  color: white;
+}
+.coming-soon {
+  background: #263449;
+  color: #cbd5e1;
+}
+\n</style>
 </head>
+
 <body>
+
+<header>
+<nav>
+<div class="logo">Satyam.</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<p style="color:#38bdf8">HELLO, WELCOME TO MY PORTFOLIO</p>
 <h1>Satyam Tiwari</h1>
 <h2>Aspiring Web Developer</h2>
-<p>B.Tech CSE | 2nd Year</p>
-<div class="card">
-<h2>About Me</h2>
-<p>Welcome to my personal portfolio.</p>
-<p>मैं एक Web Developer बनना चाहता हूँ।</p>
+<p>B.Tech Computer Science and Engineering Student | 2nd Year</p>
+<a class="btn" href="#about">Explore My Portfolio</a>
 </div>
-<div class="card">
-<h2>My Project</h2>
-<p>AutoRate India</p>
+<img class="profile" src="profile.jpg" alt="Satyam Tiwari Profile Photo">
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="card center">
+<h3>Who Am I?</h3>
+<p>
+I am Satyam Tiwari, a B.Tech Computer Science and Engineering
+student with an interest in Web Development and Software Engineering.
+I am learning modern web technologies and working on practical
+projects to improve my development skills.
+</p>
+<p style="margin-top:15px">
+My goal is to become a skilled Web Developer and build useful
+technology solutions for real-world problems.
+</p>
 </div>
+</section>
+
+<section id="education">
+<h2 class="section-title">Education</h2>
 <div class="card">
-<h2>My Skills</h2>
-<p>HTML | CSS | JavaScript</p>
+<h3>Bachelor of Technology (B.Tech)</h3>
+<p><strong>Branch:</strong> Computer Science and Engineering</p>
+<p><strong>Year:</strong> 2nd Year</p>
+<p><strong>College:</strong> Seth Vishambhar Nath Institute of Engineering & Technology</p>
+<p><strong>Affiliated to:</strong> Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
 </div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Technical Skills</h2>
+<div class="skills">
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">Git</span>
+<span class="skill">GitHub</span>
+<span class="skill">Responsive Design</span>
+</div>
+<p class="center" style="color:#94a3b8;margin-top:22px">
+Currently learning and improving my development skills.
+</p>
+</section>
+
+
+<section id="projects">
+<h2 class="section-title">My Projects</h2>
+<p class="center project-intro">
+Building practical technology solutions through creativity, learning and innovation.
+</p>
+
+<div class="project-grid">
+
+<div class="project-card">
+<span class="project-tag">01 · Web Development</span>
+<h3>AutoRate India</h3>
+<p class="project-subtitle">Transparent Auto Fare Information Platform</p>
+<p>
+A real-world web development project focused on improving
+auto-rickshaw fare transparency. AutoRate India aims to help
+passengers understand estimated auto fares before travelling,
+especially in unfamiliar locations, and make more informed
+travel decisions.
+</p>
+<h4>Key Focus</h4>
+<ul>
+<li>Estimated auto fare information</li>
+<li>Location-based fare research</li>
+<li>User-friendly interface</li>
+<li>Promoting fare transparency</li>
+</ul>
+<div class="project-tech">HTML · CSS · JavaScript · Firebase</div>
+<span class="project-status">Status: In Development</span>
+<div class="project-buttons">
+<span class="coming-soon">Live Demo: Coming Soon</span>
+<a href="https://github.com/Satyam0001-1" target="_blank" rel="noopener">GitHub Profile</a>
+</div>
+</div>
+
+<div class="project-card">
+<span class="project-tag">02 · Social Technology</span>
+<h3>SYSTEMGRAM</h3>
+<p class="project-subtitle">Hybrid Social Networking Platform</p>
+<p>
+SYSTEMGRAM is a social platform concept focused on bringing
+different social interaction experiences together in one place.
+The project aims to create a simple, engaging and user-friendly
+digital environment for connecting and sharing.
+</p>
+<h4>Key Focus</h4>
+<ul>
+<li>Hybrid social networking concept</li>
+<li>User-friendly platform design</li>
+<li>Social interaction and content sharing</li>
+<li>Future-ready platform development</li>
+</ul>
+<div class="project-tech">Web Development · UI/UX · Platform Design</div>
+<span class="project-status">Status: Concept & Development</span>
+<div class="project-buttons">
+<span class="coming-soon">Live Demo: Coming Soon</span>
+<a href="https://github.com/Satyam0001-1" target="_blank" rel="noopener">GitHub Profile</a>
+</div>
+</div>
+
+<div class="project-card">
+<span class="project-tag">03 · Web Application</span>
+<h3>SDRAV FLATEMATE</h3>
+<p class="project-subtitle">Flatmate & Accommodation Platform</p>
+<p>
+SDRAV FLATEMATE is a web application project designed to make
+flatmate and shared accommodation coordination easier. Its
+platform design includes separate experiences for flat owners,
+flatmates or tenants, and administrators.
+</p>
+<h4>Key Focus</h4>
+<ul>
+<li>Flat Owner and Flatmate/Tenant roles</li>
+<li>Role-based user experience</li>
+<li>Accommodation-related coordination</li>
+<li>Admin role in platform design</li>
+<li>Responsive mobile-friendly interface</li>
+</ul>
+<div class="project-tech">Web Application · UI/UX · Responsive Design</div>
+<span class="project-status">Status: In Development</span>
+<div class="project-buttons">
+<a href="https://housesplit-hub.preview.emergentagent.com/" target="_blank" rel="noopener">Preview Demo</a>
+<a href="https://github.com/Satyam0001-1" target="_blank" rel="noopener">GitHub Profile</a>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section id="contact">
+<h2 class="section-title">Let's Connect</h2>
+<div class="card center">
+<h3>Get in Touch</h3>
+<p>Interested in technology, development and meaningful projects?</p>
+<p style="margin-top:15px">Connect with me on GitHub:</p>
+<a class="btn" href="https://github.com/Satyam0001-1" target="_blank" rel="noopener">
+Visit My GitHub
+</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Satyam Tiwari. All Rights Reserved.</p>
+<p>Designed and built with HTML & CSS.</p>
+</footer>
+
 </body>
 </html>
