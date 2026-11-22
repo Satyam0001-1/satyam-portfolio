@@ -20,8 +20,7 @@
   --panel: #101a2d;
   --blue: #38bdf8;
   --cyan: #67e8f9;
-  --text: #f8fafc;
-  --muted: #a9b8ce;
+  --text: #f8fafc;                                                                   --muted: #a9b8ce;
   --border: rgba(125,211,252,.17);
 }
 
@@ -36,8 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
+a {                                                                                  text-decoration: none;
   color: inherit;
 }
 
@@ -89,8 +87,7 @@ section {
   padding: 85px 7%;
   scroll-margin-top: 75px;
 }
-
-.hero {
+                                                                                   .hero {
   min-height: 85vh;
   max-width: 1250px;
   margin: auto;
@@ -106,8 +103,7 @@ section {
   flex: 1 1 300px;
 }
 
-.hero-content > p:first-child {
-  color: var(--cyan) !important;
+.hero-content > p:first-child {                                                      color: var(--cyan) !important;
   font-size: 13px !important;
   letter-spacing: 3px;
   font-weight: bold;
@@ -130,8 +126,7 @@ section {
 
 .hero p {
   color: var(--muted);
-  font-size: 17px;
-}
+  font-size: 17px;                                                                 }
 
 .profile {
   width: 250px;
@@ -213,10 +208,8 @@ section {
 .project-intro {
   color: var(--muted);
   margin-bottom: 35px;
-}
-
-.project-grid {
-  display: grid;
+}                                                                                  
+.project-grid {                                                                      display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 24px;
   width: 100%;
@@ -256,8 +249,7 @@ section {
   font-size: 14px;
   line-height: 1.8;
 }
-
-.project-card ul {
+                                                                                   .project-card ul {
   padding-left: 20px;
 }
 
@@ -309,10 +301,8 @@ section {
   background: #087db5;
   color: white;
 }
-
-.coming-soon {
-  background: #263449;
-  color: #cbd5e1;
+                                                                                   .coming-soon {
+  background: #263449;                                                               color: #cbd5e1;
 }
 
 footer {
@@ -368,8 +358,7 @@ footer {
     width: 175px;
     height: 175px;
   }
-
-  .card {
+                                                                                     .card {
     padding: 23px;
   }
 
@@ -398,8 +387,7 @@ footer {
   @keyframes appear {
     from {opacity: 0; transform: translateY(15px);}
     to {opacity: 1; transform: translateY(0);}
-  }
-}
+  }                                                                                }
 
 
 /* Additional professional portfolio sections */
@@ -424,8 +412,7 @@ footer {
   flex-wrap: wrap;
   gap: 13px;
   margin-top: 22px;
-}
-
+}                                                                                  
 .outline-btn {
   display: inline-block;
   padding: 12px 22px;
@@ -450,10 +437,8 @@ footer {
 
 .info-card {
   min-width: 0;
-  padding: 27px;
-  border-radius: 19px;
-  background: linear-gradient(145deg,#15243c,#0b1425);
-  border: 1px solid var(--border);
+  padding: 27px;                                                                     border-radius: 19px;
+  background: linear-gradient(145deg,#15243c,#0b1425);                               border: 1px solid var(--border);
   transition: .3s;
 }
 
@@ -580,10 +565,8 @@ practical technology solutions for real-world problems.
 <a class="btn" href="#projects">Explore My Work ↗</a>
 <a class="outline-btn" href="https://github.com/Satyam0001-1" target="_blank" rel="noopener">GitHub ↗</a>
 </div>
-</div>
-<img class="profile" src="profile.jpg" alt="Satyam Tiwari Profile Photo">
-</section>
-
+</div>                                                                             <img class="profile" src="profile.jpg" alt="Satyam Tiwari Profile Photo">
+</section>                                                                         
 <section id="highlights">
 <p class="eyebrow">PROFILE OVERVIEW</p>
 <h2 class="section-title">Profile Highlights</h2>
@@ -666,8 +649,7 @@ Technology areas I am exploring through learning and practical projects.
 <span class="info-number">02</span>
 <h3>Software Engineering</h3>
 <p>Understanding software design and developing useful digital solutions.</p>
-</div>
-<div class="info-card">
+</div>                                                                             <div class="info-card">
 <span class="info-number">03</span>
 <h3>Problem Solving</h3>
 <p>Using logical thinking to understand and solve practical problems.</p>
@@ -772,9 +754,10 @@ flatmates or tenants, and administrators.
 <p>View my education, technical skills and personal projects.</p>
 
 <iframe
-  src="resume.pdf"
+  src="https://docs.google.com/gview?embedded=1&url=https%3A%2F%2Fsatyam0001-1.github.io%2Fsatyam-portfolio%2Fresume.pdf"
   title="Satyam Tiwari Resume"
-  class="resume-preview">
+  class="resume-preview"
+  loading="lazy">
 </iframe>
 
 <div class="hero-actions">
